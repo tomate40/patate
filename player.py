@@ -1,6 +1,7 @@
 import pygame
 import settings
 import col
+import time
 #import main
 #import multiplayer
 import Map
@@ -24,9 +25,11 @@ class Player():
         keys = pygame.key.get_pressed()
 
         if keys[pygame.K_LEFT]:
-            settings.Xpos += self.vel
+            if settings.avancer:
+                settings.Xpos += self.vel
 
         if keys[pygame.K_RIGHT]:
+            if settings.avancer:
             settings.Xpos -= self.vel
 
         if keys[pygame.K_UP]:
@@ -36,9 +39,10 @@ class Player():
             settings.Ypos -= self.vel
     
     def collision(self):
-        for a in range (0, 200):
-            if self.rectangle_player.colliderect(Map.m.rectangles[a]):
-                print('heeleafeawfewawfeaewf')                
+        #for a in range (len(Map.m.rectangles)):
+            #if self.rectangle_player.colliderect(Map.m.rectangles[a]):
+                #print('heeleafeawfewawfeaewf')     
+        pass           
 
 def initPlayer():
     global p
@@ -59,3 +63,4 @@ def loop():
                 pygame.quit()
                 print('quit')
         p.move()
+        p.collision()

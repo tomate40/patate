@@ -1,4 +1,4 @@
-import pygame 
+import pygame
 import Map
 import player
 from _thread import *
@@ -11,6 +11,12 @@ def initcollision():
 def loop():
     clock = pygame.time.Clock()
     while True:
-        for a in range(0, 200):
+        clock.tick(60)
+        for a in range (len(Map.m.rectangles)):
             if player.p.rectangle_player.colliderect(Map.m.rectangles[a]):
-                print('heeleafeawfewawfeaewf')
+                settings.avancer = False
+            else:
+                settings.avancer = True
+
+def decide_collidable(Xpos, Ypos, rectangles):
+    
