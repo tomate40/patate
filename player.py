@@ -10,11 +10,9 @@ from _thread import *
 
 class Player():
     def __init__(self, x, y, width, height, color):
-        settings.Xpos = x
-        settings.Ypos = y
         self.width = width
         self.height = height
-        self.rectangle_player = pygame.Rect(settings.Xpos, settings.Ypos, width, height)
+        self.rectangle_player = pygame.Rect(268-25, 133-25, width, height)
         self.color = color
         self.vel = 3
 
@@ -25,11 +23,9 @@ class Player():
         keys = pygame.key.get_pressed()
 
         if keys[pygame.K_LEFT]:
-            if settings.avancer:
-                settings.Xpos += self.vel
+            settings.Xpos += self.vel
 
         if keys[pygame.K_RIGHT]:
-            if settings.avancer:
             settings.Xpos -= self.vel
 
         if keys[pygame.K_UP]:
