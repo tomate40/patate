@@ -1,4 +1,4 @@
-
+import pygame 
 import Map
 import player
 from _thread import *
