@@ -29,16 +29,11 @@ class Player():
             settings.Xpos -= self.vel
 
         if keys[pygame.K_UP]:
+            #if settings.moveUp == True:
             settings.Ypos += self.vel
 
         if keys[pygame.K_DOWN]:
-            settings.Ypos -= self.vel
-    
-    def collision(self):
-        #for a in range (len(Map.m.rectangles)):
-            #if self.rectangle_player.colliderect(Map.m.rectangles[a]):
-                #print('heeleafeawfewawfeaewf')     
-        pass           
+            settings.Ypos -= self.vel         
 
 def initPlayer():
     global p
@@ -59,4 +54,3 @@ def loop():
                 pygame.quit()
                 print('quit')
         p.move()
-        p.collision()
