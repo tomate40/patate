@@ -23,17 +23,20 @@ class Player():
         keys = pygame.key.get_pressed()
 
         if keys[pygame.K_LEFT]:
-            settings.Xpos += self.vel
+            if settings.moveLeft == True:
+                settings.Xpos += self.vel
 
         if keys[pygame.K_RIGHT]:
-            settings.Xpos -= self.vel
+            if settings.moveRight == True:
+                settings.Xpos -= self.vel
 
         if keys[pygame.K_UP]:
-            #if settings.moveUp == True:
-            settings.Ypos += self.vel
+            if settings.moveUp == True:
+                settings.Ypos += self.vel
 
         if keys[pygame.K_DOWN]:
-            settings.Ypos -= self.vel         
+            if settings.moveDown == True:
+                settings.Ypos -= self.vel         
 
 def initPlayer():
     global p
@@ -53,4 +56,4 @@ def loop():
                 run = False
                 pygame.quit()
                 print('quit')
-        p.move()
+        
