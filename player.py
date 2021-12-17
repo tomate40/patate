@@ -2,17 +2,15 @@ import pygame
 import settings
 import col
 import time
-#import main
-#import multiplayer
 import Map
 from _thread import *
 
 
-class Player():
+class Player1():
     def __init__(self, x, y, width, height, color):
         self.width = width
         self.height = height
-        self.rectangle_player = pygame.Rect(268-25, 133-25, width, height)
+        self.rectangle_player = pygame.Rect(300-25, 200-25, width, height)
         self.color = color
         self.vel = 3
 
@@ -38,15 +36,14 @@ class Player():
             if settings.moveDown == True:
                 settings.Ypos -= self.vel         
 
-def initPlayer():
-    global p
+def initPlayer1():
+    global p1
     pygame.init()
-    p = Player(268-25, 133-25, 50, 50, (0, 0, 0))
+    p1 = Player1(268-25, 133-25, 50, 50, (255, 165, 0))
     start_new_thread(loop, ())
 
 
 def loop():
-    global p
     run = True
     clock = pygame.time.Clock()
     while run:

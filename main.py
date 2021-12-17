@@ -3,8 +3,9 @@ import time
 import settings
 import Map
 import col
-#import multiplayer
+import multiplayer
 import player
+import player2
 from _thread import *
 
 settings.init()
@@ -15,10 +16,13 @@ settings.win = pygame.display.set_mode((width, height))
 pygame.display.set_caption('client')
 settings.win.fill((255, 255, 255))
 
+multiplayer.upload()
+
 def redrawWindow(win):
     win.fill((255, 255, 255))
     Map.m.draw(win)
-    player.p.draw(win)
+    player.p1.draw(win)
+    player2.p2.draw(win)
     pygame.display.update()
 
 def loop():
@@ -28,7 +32,8 @@ def loop():
         redrawWindow(settings.win)
 
 def main():
-    player.initPlayer()
+    player.initPlayer1()
+    player2.initPlayer2()
     Map.initMap()
     col.initcollision()
     start_new_thread(loop, ())

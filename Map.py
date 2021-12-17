@@ -36,7 +36,7 @@ def initMap():
     Maph=[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
           1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,
           1,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,
-          1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,
+          1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,
           1,0,0,1,1,1,0,0,0,0,0,1,1,1,1,1,1,0,0,1,
           1,0,0,1,1,1,0,0,0,0,0,1,1,1,1,1,1,0,0,1,
           1,0,0,1,1,1,0,0,0,1,0,0,0,0,0,0,0,0,0,1,
@@ -44,15 +44,24 @@ def initMap():
           1,1,1,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,1,
           1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
     m = Map(settings.Xpos, settings.Ypos, 50, 50)
-    print('helo')
 
+#rectToDraw = []
 #run = True
 #checkID = 1 
 #liste = []
+#Xline = 1
+#Yline = 1
 #while run:
  #   if checkID - 1 == liste[checkID - 1]:
-  #      f
-   # if Maph[checkID] == 1:
-    #    liste.append(checkID)
-    
-   # checkID += 1
+  #      if Maph[checkID] == 1:
+   #         liste.append(checkID)
+    #        Xline + 1
+      #  elif checkLine == False:
+     #       checkID += 19 - len(liste)
+       #     checkLine = True
+        #    Yline + 1
+        #else:
+         #   rectToDraw.append((liste, Yline*50, 50, 50))
+
+    #checkID += 1
+    #print(rectToDraw)
