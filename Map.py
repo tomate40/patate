@@ -20,7 +20,7 @@ class Map():
         for i in range(0, 200):
           loc = Maph[(((mapY*20) - 20) + mapX) - 1]
           if loc == 1:
-              self.rectangle_present = pygame.Rect((settings.Xpos - 257) + mapX*self.width, (settings.Ypos - 243) + mapY*self.height, self.width, self.height)
+              self.rectangle_present = pygame.Rect((settings.Xpos - 257) + (mapX*self.width),(settings.Ypos - 243) + (mapY*self.height), self.width, self.height)
               pygame.draw.rect(settings.win, self.color, self.rectangle_present)
               self.rectangles.append(self.rectangle_present)
               self.rectangle_present = str()

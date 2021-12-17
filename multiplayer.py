@@ -15,6 +15,4 @@ def download():
     r = collection.find_one({'_id': 'Player2'})
     settings.Xpos2 = r['x']
     settings.Ypos2 = r['y']
-    player2.p2.rectangle_player2.x = r['x']
-    player2.p2.rectangle_player2.y = r['y']
     

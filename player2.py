@@ -13,6 +13,7 @@ class Player2():
         self.rectangle_player2 = pygame.Rect(settings.Xpos2-25, settings.Ypos2-25, width, height)
     
     def draw(self, win):
+        self.rectangle_player2 = (settings.Xpos - settings.Xpos2, settings.Ypos - settings.Ypos2, self.width, self.height)
         pygame.draw.rect(win, self.color, self.rectangle_player2)
 
 def initPlayer2():

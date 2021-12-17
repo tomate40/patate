@@ -73,6 +73,9 @@ def loop():
                         settings.moveDown = True
                         current_collisionBas.remove(Map.m.rectangles[a].x - settings.Xpos)
                         
-            
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                print('quit')
         player.p1.move()
         Map.m.rectangles.clear()
