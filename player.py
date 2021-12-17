@@ -41,7 +41,7 @@ class Player():
 def initPlayer():
     global p
     pygame.init()
-    p = Player(268-25, 133-25, 50, 50, (255, 165, 0))
+    p = Player(268-25, 133-25, 50, 50, (0, 0, 0))
     start_new_thread(loop, ())
 
 
