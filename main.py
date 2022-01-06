@@ -1,6 +1,7 @@
 import pygame
 import time
 import settings
+import z
 import Map
 import col
 import multiplayer
@@ -16,7 +17,7 @@ settings.win = pygame.display.set_mode((width, height))
 pygame.display.set_caption('client')
 settings.win.fill((255, 255, 255))
 
-multiplayer.upload()
+z.lol()
 
 def redrawWindow(win):
     win.fill((255, 255, 255))

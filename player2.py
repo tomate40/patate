@@ -25,5 +25,5 @@ def initPlayer2():
 def loop():
     clock = pygame.time.Clock()
     while True:
-        clock.tick(60)
+        clock.tick(5)
         multiplayer.download()

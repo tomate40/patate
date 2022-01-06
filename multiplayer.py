@@ -1,6 +1,5 @@
 import pymongo, os
 import settings
-import player2
 
 
 client = pymongo.MongoClient(os.getenv('DATABASE'))
@@ -15,4 +14,10 @@ def download():
     r = collection.find_one({'_id': 'Player2'})
     settings.Xpos2 = r['x']
     settings.Ypos2 = r['y']
+    
+def take_position():
+    r = collection.find_one({'_id': 'Player1'})
+    settings.Xpos = r['x']
+    settings.Ypos = r['y']
+
     
