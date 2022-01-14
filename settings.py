@@ -1,5 +1,6 @@
 def init():
-    global Xpos, Ypos, Xpos2, Ypos2, PlayerID, win, moveUp, moveDown, moveLeft, moveRight
+    global Xpos, Ypos, Xpos2, Ypos2, PlayerID, win, moveUp, moveDown, moveLeft, moveRight, size
+    size = 50
     Xpos = 130
     Ypos = 70
     Xpos2 = int()

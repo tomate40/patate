@@ -1,7 +1,7 @@
 import pygame
 import time
 import settings
-import z
+import InitMap
 import Map
 import col
 import multiplayer
@@ -17,7 +17,7 @@ settings.win = pygame.display.set_mode((width, height))
 pygame.display.set_caption('client')
 settings.win.fill((255, 255, 255))
 
-z.lol()
+InitMap.InitMap()
 
 def redrawWindow(win):
     win.fill((255, 255, 255))
@@ -37,6 +37,6 @@ def main():
     player2.initPlayer2()
     Map.initMap()
     col.initcollision()
-    start_new_thread(loop, ())
+    loop()
 
 main()

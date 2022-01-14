@@ -22,29 +22,29 @@ class Player1():
         if keys[pygame.K_LEFT]:
             if settings.moveLeft == True:
                 settings.Xpos += self.vel
-                start_new_thread(upload, ())
 
         if keys[pygame.K_RIGHT]:
             if settings.moveRight == True:
                 settings.Xpos -= self.vel
-                start_new_thread(upload, ())
 
         if keys[pygame.K_UP]:
             if settings.moveUp == True:
                 settings.Ypos += self.vel
-                start_new_thread(upload, ())
 
         if keys[pygame.K_DOWN]:
             if settings.moveDown == True:
-                settings.Ypos -= self.vel  
-                start_new_thread(upload, ())       
+                settings.Ypos -= self.vel
 
 def initPlayer1():
     global p1
     pygame.init()
     multiplayer.take_position()
     p1 = Player1(268-25, 133-25, 50, 50, (255, 165, 0))
+    #start_new_thread(upload, ())
 
 
 def upload():
-    multiplayer.upload()
+    clock = pygame.time.Clock()
+    while True:
+        clock.tick(60)
+        multiplayer.upload()

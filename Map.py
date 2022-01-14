@@ -1,6 +1,6 @@
 import settings
 import pygame
-from _thread import *
+import InitMap
 
 
 class Map():
@@ -15,33 +15,12 @@ class Map():
 
     def draw(self, win):
         global Maph
-        mapX = 1
-        mapY = 1
-        for i in range(0, 200):
-          loc = Maph[(((mapY*20) - 20) + mapX) - 1]
-          if loc == 1:
-              self.rectangle_present = pygame.Rect((settings.Xpos - 257) + (mapX*self.width),(settings.Ypos - 243) + (mapY*self.height), self.width, self.height)
-              pygame.draw.rect(settings.win, self.color, self.rectangle_present)
-              self.rectangles.append(self.rectangle_present)
-              self.rectangle_present = str()
-          if mapX == 20:
-              mapY += 1
-              mapX = 1
-          else:
-              mapX += 1
-          i += 1
+        for i in range(len(InitMap.Rectangles)):
+            self.rectangle_present = pygame.Rect((settings.Xpos + 257) + InitMap.Rectangles[i][0], (settings.Ypos + 243) + InitMap.Rectangles[i][1], InitMap.Rectangles[i][2], InitMap.Rectangles[i][3])
+            pygame.draw.rect(settings.win, self.color, self.rectangle_present)
+            self.rectangles.append(self.rectangle_present)
           
 
 def initMap():
-    global m, Maph
-    Maph=[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
-          1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,
-          1,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,
-          1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,
-          1,0,0,1,1,1,0,0,0,0,0,1,1,1,1,1,1,0,0,1,
-          1,0,0,1,1,1,0,0,0,0,0,1,1,1,1,1,1,0,0,1,
-          1,0,0,1,1,1,0,0,0,1,0,0,0,0,0,0,0,0,0,1,
-          1,0,0,0,0,0,0,0,0,1,0,0,1,1,0,0,0,0,0,1,
-          1,1,1,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,1,
-          1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
+    global m
     m = Map(settings.Xpos, settings.Ypos, 50, 50)
