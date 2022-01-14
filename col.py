@@ -8,6 +8,7 @@ from _thread import *
 
 def initcollision():
     start_new_thread(loop, ())
+    pass
 
 
 def loop():

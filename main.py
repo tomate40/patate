@@ -33,6 +33,7 @@ def loop():
         redrawWindow(settings.win)
 
 def main():
+    multiplayer.initMultiplayer()
     player.initPlayer1()
     player2.initPlayer2()
     Map.initMap()

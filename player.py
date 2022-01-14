@@ -40,7 +40,7 @@ def initPlayer1():
     pygame.init()
     multiplayer.take_position()
     p1 = Player1(268-25, 133-25, 50, 50, (255, 165, 0))
-    #start_new_thread(upload, ())
+    start_new_thread(upload, ())
 
 
 def upload():
