@@ -39,7 +39,7 @@ def initPlayer1():
     global p1
     pygame.init()
     multiplayer.take_position()
-    p1 = Player1(268-25, 133-25, 50, 50, (255, 165, 0))
+    p1 = Player1((settings.ScreenSize[0] / 2) - (settings.size / 2), (settings.ScreenSize[1] / 2) - (settings.size / 2), settings.size, settings.size, (255, 165, 0))
     start_new_thread(upload, ())
 
 

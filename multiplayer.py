@@ -11,14 +11,18 @@ def download():
     settings.Ypos2 = u['y']
     
 def take_position():
-    o = collection.find_one({'_id': 'Player1'})
-    settings.Xpos = o['x']
-    settings.Ypos = o['y']
+	o = collection.find_one({'_id': 'Player1'})
+	settings.Xpos = o['x']
+	settings.Ypos = o['y']
 
 def positioningP2():
     f = collection.find_one({'_id': 'Player2'})
     settings.Xpos2 = f['x']
     settings.Ypos2 = f['y']
+
+def Attaque(X, Y):
+	collection.update_one({"_id": "Player1"}, {"$set": {"attaqueX": X, "attqueY": Y}})
+
 
 def initMultiplayer():
     global collection
@@ -27,4 +31,3 @@ def initMultiplayer():
 
     db = client['patate']
     collection = db['patate']
-    
