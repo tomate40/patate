@@ -4,11 +4,11 @@ import settings
 import InitMap
 import gun
 import Map
+import hud
 import col
 import multiplayer
 import player
 import player2
-import attaque
 from _thread import *
 
 settings.init()
@@ -23,16 +23,17 @@ InitMap.InitMap()
 def redrawWindow(win):
 	global iii
 	win.fill((255, 255, 255))
+	gun.findAngle()
 	Map.m.draw(win)
 	player.p1.draw(win)
 	player2.p2.draw(win)
-	gun.findAngle()
+	hud.drawHUD(win)
 	pygame.display.update()
 
 def loop():
 	clock = pygame.time.Clock()
 	while True:
-		clock.tick(60)
+		clock.tick(settings.FPScap)
 		redrawWindow(settings.win)
 
 def main():
@@ -41,7 +42,7 @@ def main():
 	player2.initPlayer2()
 	Map.initMap()
 	col.initcollision()
-	attaque.initAttaque()
-	gun.initSwordP1()
+	gun.initGunP1()
+	hud.initHUD()
 	loop()
 main()

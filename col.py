@@ -21,7 +21,7 @@ def loop():
     current_collisionGauche = []
     current_collisionDroite = []
     while True:
-        clock.tick(60)
+        clock.tick(settings.FPScap)
         for a in range (len(Map.m.rectangles)):
             
             #Check pour collision

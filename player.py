@@ -46,5 +46,5 @@ def initPlayer1():
 def upload():
     clock = pygame.time.Clock()
     while True:
-        clock.tick(60)
+        clock.tick(settings.FPScap)
         multiplayer.upload()
