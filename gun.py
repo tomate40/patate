@@ -10,6 +10,10 @@ def shot():
 		settings.striking = True
 		angle = 0
 
+def DrawGun():
+	if settings.currentWapon == "GUN":
+		findAngle()
+
 def findAngle():
 	mousePos = pygame.mouse.get_pos()
 

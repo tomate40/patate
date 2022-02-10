@@ -19,19 +19,19 @@ class Player1():
     def move(self):
         keys = pygame.key.get_pressed()
 
-        if keys[pygame.K_LEFT]:
+        if keys[pygame.K_LEFT] or keys[pygame.K_a]:
             if settings.moveLeft == True:
                 settings.Xpos += self.vel
 
-        if keys[pygame.K_RIGHT]:
+        if keys[pygame.K_RIGHT] or keys[pygame.K_d]:
             if settings.moveRight == True:
                 settings.Xpos -= self.vel
 
-        if keys[pygame.K_UP]:
+        if keys[pygame.K_UP] or keys[pygame.K_w]:
             if settings.moveUp == True:
                 settings.Ypos += self.vel
 
-        if keys[pygame.K_DOWN]:
+        if keys[pygame.K_DOWN] or keys[pygame.K_s]:
             if settings.moveDown == True:
                 settings.Ypos -= self.vel
 

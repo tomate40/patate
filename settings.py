@@ -1,5 +1,5 @@
 def init():
-	global Xpos, Ypos, Xpos2, Ypos2, PlayerID, win,	moveUp, moveDown, moveLeft, moveRight, size, ScreenSize, GunP1, striking, showGunP1, FPScap, hpP1, hpP2
+	global Xpos, Ypos, Xpos2, Ypos2, PlayerID, win,	moveUp, moveDown, moveLeft, moveRight, size, ScreenSize, GunP1, striking, showGunP1, FPScap, hpP1, hpP2, GUIscale, currentWapon, mode
 	size = 50
 	Xpos = 130
 	Ypos = 70
@@ -18,4 +18,6 @@ def init():
 	striking = False
 	showGunP1 = False
 	FPScap = 60
-	HUDscale = 100
+	GUIscale = 100
+	currentWapon = "GUN"
+	mode = "PLAY"

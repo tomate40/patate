@@ -25,9 +25,10 @@ def Attaque(X, Y):
 
 
 def initMultiplayer():
-    global collection
-    print("ge")
-    client = pymongo.MongoClient(os.getenv('DATABASE'))
+	global collection
+	client = pymongo.MongoClient(os.getenv('DATABASE'))
 
-    db = client['patate']
-    collection = db['patate']
+	db = client['patate']
+	collection = db['patate']
+
+	print('Connected')

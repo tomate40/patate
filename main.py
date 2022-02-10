@@ -23,11 +23,14 @@ InitMap.InitMap()
 def redrawWindow(win):
 	global iii
 	win.fill((255, 255, 255))
-	gun.findAngle()
-	Map.m.draw(win)
-	player.p1.draw(win)
-	player2.p2.draw(win)
-	hud.drawHUD(win)
+	if settings.mode == "PLAY" or "MENU":
+		gun.DrawGun()
+		Map.m.draw(win)
+		player.p1.draw(win)
+		player2.p2.draw(win)
+		hud.gui.DrawUI()
+	if settings.mode == "MENU":
+		hud.hud.DrawMenu()
 	pygame.display.update()
 
 def loop():
