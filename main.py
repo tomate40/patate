@@ -30,7 +30,10 @@ def redrawWindow(win):
 		player2.p2.draw(win)
 		hud.gui.DrawUI()
 	if settings.mode == "MENU":
-		hud.hud.DrawMenu()
+		hud.Hud.DrawMenu()
+		hud.buttons_draw()
+	if settings.mode == "SETTINGS":
+		hud.Hud.DrawSettings()
 	pygame.display.update()
 
 def loop():
