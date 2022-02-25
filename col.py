@@ -64,19 +64,17 @@ def loop():
                         
                 #check if collision haut est encore True
                 if Map.m.rectangles[a].x - settings.Xpos in current_collisionHaut:
-                    if abs(Map.m.rectangles[a].bottom - player.p1.rectangle_player.top) < collision_tolerance:
+                    if abs(Map.m.rectangles[a].bottom - 
+													player.p1.rectangle_player.top)< collision_tolerance:
                         settings.moveUp = True
-                        current_collisionHaut.remove(Map.m.rectangles[a].x - settings.Xpos)
+                        current_collisionHaut.remove(
+													Map.m.rectangles[a].x - 
+													settings.Xpos)
                         
                 #Check if collision bas est encore True
                 if Map.m.rectangles[a].x - settings.Xpos in current_collisionBas:
                     if abs(Map.m.rectangles[a].top - player.p1.rectangle_player.bottom) < collision_tolerance:
                         settings.moveDown = True
                         current_collisionBas.remove(Map.m.rectangles[a].x - settings.Xpos)
-                        
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                pygame.quit()
-                print('quit')
         player.p1.move()
         Map.m.rectangles.clear()
